@@ -1,16 +1,30 @@
 import "./styles.css";
-import { runCode } from "./exercise";
+import { triangleArea } from "./exercise";
 
 (() => {
-  const arrayA = [1, 2, 3, 4];
-  const arrayB = [5, 6, 7, 8];
-  const rta = runCode(arrayA, arrayB);
 
   document.getElementById("app").innerHTML = `
-  <h1>Title</h1>
-  <p>Array A: <code>${arrayA}</code></p>
-  <p>Array B: <code>${arrayB}</code></p>
-  <p>Response from <code>runCode</code>
-  <pre><code>${rta}</code></pre>
+  <h1>Triangle Area</h1>
+  <p>Base: </p>
+  <p><input id="base" value="0" placeholder="Type value" /></p>
+  <p>Height:</p>
+  <p><input id="height" value="0" placeholder="Type value"  /></p>
+  <p><button id="btn" type="button">runCode</button></p>
+  <p><pre><code id="code"></code></pre></p>
   `;
+
+  document.getElementById('btn').addEventListener('click', () => {
+    try {
+      const base = parseInt(document.getElementById('base').value, 10);
+      const height = parseInt(document.getElementById('height').value, 10);;
+      const rta = triangleArea(base, height);
+      document.getElementById('code').innerHTML = rta;
+    } catch (error) {
+      document.getElementById('code').innerHTML = error;
+    }
+  })
+
+
+
+
 })();

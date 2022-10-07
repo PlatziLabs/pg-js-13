@@ -1,17 +1,7 @@
-import { runCode } from "./exercise";
+import { triangleArea } from "./exercise";
 
-describe("tests", () => {
-  it("should return [1,2,3,4]", () => {
-    const arrayA = [1, 2];
-    const arrayB = [3, 4];
-    const rta = runCode(arrayA, arrayB);
-    expect(rta).toEqual([1, 2, 3, 4]);
-  });
-
-  it("should return [1,2,3,4,5]", () => {
-    const arrayA = [1, 2];
-    const arrayB = [3, 4, 5];
-    const rta = runCode(arrayA, arrayB);
-    expect(rta).toEqual([1, 2, 3, 4, 5]);
+describe('Test Triangle Area Function', () => {
+  test('Calculate Area with numbers', () => {
+    expect(triangleArea(7, 4)).toEqual(14);
   });
 });
