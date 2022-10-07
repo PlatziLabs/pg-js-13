@@ -1,3 +1,3 @@
 export function triangleArea(base, height) {
-  // Tu código aquí 👈
+  return ( base * height ) / 2;
 };
